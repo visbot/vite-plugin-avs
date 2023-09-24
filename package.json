@@ -1,0 +1,40 @@
+{
+  "name": "@visbot/vite-plugin-avs",
+  "version": "0.0.0",
+  "description": "A Vite plugin for your AVS presets",
+  "exports": "./dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsup index.ts --format esm --platform node --dts",
+    "dev": "npm run build -- --watch",
+    "lint": "eslint index.ts --ignore-path .gitignore",
+    "prepack": "npm run build",
+    "prepare": "husky install",
+    "test": "cd tests && vite build"
+  },
+  "keywords": [
+		"vite-plugin",
+		"avs",
+		"webvs",
+		"winamp"
+	],
+  "author": "idleberg",
+  "license": "ISC",
+  "dependencies": {
+    "@visbot/webvsc": "3.0.0-alpha"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.4",
+    "@typescript-eslint/eslint-plugin": "^6.7.2",
+    "@typescript-eslint/parser": "^6.7.2",
+    "eslint": "^8.50.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.4.9"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --cache --fix"
+  }
+}
