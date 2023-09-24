@@ -1,6 +1,6 @@
 {
   "name": "@visbot/vite-plugin-avs",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A Vite plugin for your AVS presets",
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -20,7 +20,7 @@
 		"winamp"
 	],
   "author": "idleberg",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@visbot/webvsc": "3.0.0-alpha"
   },
