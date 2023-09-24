@@ -3,7 +3,7 @@
 > A Vite plugin for your AVS presets
 
 [![License](https://img.shields.io/github/license/visbot/vite-plugin-avs?color=blue&style=for-the-badge)](https://github.com/visbot/vite-plugin-avs/blob/main/LICENSE)
-[![Version](https://img.shields.io/npm/v/@visbot/vite-plugin-livescript?style=for-the-badge)](https://www.npmjs.org/package/vite-plugin-livescript)
+[![Version](https://img.shields.io/npm/v/@visbot/vite-plugin-avs?style=for-the-badge)](https://www.npmjs.org/package/@vite/vite-plugin-avs)
 [![Build](https://img.shields.io/github/actions/workflow/status/visbot/vite-plugin-avs/tests.yml?style=for-the-badge)](https://github.com/visbot/vite-plugin-avs/actions)
 
 ## Installation
