@@ -17,7 +17,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "tsup index.ts --format esm --platform node --dts",
+    "build": "tsup",
     "dev": "npm run build -- --watch",
     "lint": "eslint index.ts --ignore-path .gitignore",
     "prepack": "npm run build",
