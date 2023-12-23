@@ -4,18 +4,18 @@
   "description": "A Vite plugin for your AVS presets",
   "license": "MIT",
   "author": "idleberg",
-	"repository": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/visbot/vite-plugin-avs"
   },
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
-	"files": [
-		"dist",
-		"LICENCE",
-		"README.md"
-	],
+  "files": [
+    "dist",
+    "LICENCE",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsup index.ts --format esm --platform node --dts",
     "dev": "npm run build -- --watch",
@@ -25,24 +25,24 @@
     "test": "cd tests && vite build"
   },
   "keywords": [
-		"vite-plugin",
-		"avs",
-		"webvs",
-		"winamp"
-	],
+    "vite-plugin",
+    "avs",
+    "webvs",
+    "winamp"
+  ],
   "dependencies": {
-    "@visbot/webvsc": "3.0.0-alpha"
+    "@visbot/webvsc": "3.0.0-alpha.4"
   },
   "devDependencies": {
-    "@types/node": "^20.6.4",
-    "@typescript-eslint/eslint-plugin": "^6.7.2",
-    "@typescript-eslint/parser": "^6.7.2",
-    "eslint": "^8.50.0",
+    "@types/node": "^20.10.5",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
     "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
-    "tsup": "^7.2.0",
-    "typescript": "^5.2.2",
-    "vite": "^4.4.9"
+    "lint-staged": "^15.2.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3",
+    "vite": "^4.5.1"
   },
   "lint-staged": {
     "*.ts": "eslint --cache --fix"

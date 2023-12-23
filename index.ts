@@ -1,4 +1,3 @@
-// @ts-ignore
 import { convertPreset } from '@visbot/webvsc';
 import { basename, extname } from 'node:path';
 import { stat } from 'node:fs/promises';
@@ -16,7 +15,7 @@ export default function ViteAvsPlugin() {
 						const input = textEncoder.encode(code)
 						const ext = extname(id);
 						const name = basename(id, ext);
-						const date = ((await stat(id)).mtime || new Date()).toISOString();
+						const date = (await stat(id)).mtime || new Date();
 
 						const output = convertPreset(input, name, date);
 
