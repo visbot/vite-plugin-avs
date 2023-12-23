@@ -23,7 +23,7 @@ export default defineConfig({
 });
 ```
 
-You are now set up to import your AVS presets as modules.
+You are now set up to import AVS presets as modules.
 
 **Example**
 
