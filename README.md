@@ -25,7 +25,7 @@ export default defineConfig({
 
 You are now set up to import AVS presets as modules.
 
-**Example**
+**Example:**
 
 ```ts
 import preset from './preset.avs';
