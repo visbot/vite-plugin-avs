@@ -23,6 +23,14 @@ export default defineConfig({
 });
 ```
 
+You are now set up to import your AVS presets as modules.
+
+**Example**
+
+```ts
+import preset from './preset.avs';
+```
+
 ## License
 
 This work is licensed under [The MIT License](LICENSE)
