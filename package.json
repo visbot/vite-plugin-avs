@@ -1,6 +1,6 @@
 {
   "name": "@visbot/vite-plugin-avs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Vite plugin for your AVS presets",
   "license": "MIT",
   "author": "idleberg",
@@ -11,9 +11,9 @@
   "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
-	"engines": {
-		"node": ">=18.0.0"
-	},
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "files": [
     "dist",
     "LICENCE",
