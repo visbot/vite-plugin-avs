@@ -13,13 +13,11 @@
 ## Usage
 
 ```js
-import { defineConfig } from 'vite';
-import avs from '@visbot/vite-plugin-avs';
+import { defineConfig } from "vite";
+import avs from "@visbot/vite-plugin-avs";
 
 export default defineConfig({
-    plugins: [
-        avs()
-    ]
+	plugins: [avs()],
 });
 ```
 
@@ -28,9 +26,9 @@ You are now set up to import AVS presets as modules.
 **Example:**
 
 ```ts
-import preset from './preset.avs';
+import preset from "./preset.avs";
 ```
 
 ## License
 
-This work is licensed under [The MIT License](LICENSE)
+This work is licensed under [The MIT License](LICENSE)-
