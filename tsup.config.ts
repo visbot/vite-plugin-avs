@@ -7,5 +7,5 @@ export default defineConfig({
 	format: 'esm',
 	minify: true,
 	platform: 'node',
-	treeshake: 'recommended'
+	treeshake: 'recommended',
 });

@@ -22,6 +22,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "npm run build -- --watch",
+		"lint": "biome check --config-path=biome.jsonc --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
     "prepack": "npm run build",
     "test": "cd tests && vite build"
   },
