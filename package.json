@@ -1,6 +1,6 @@
 {
   "name": "@visbot/vite-plugin-avs",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A Vite plugin for your AVS presets",
   "license": "MIT",
   "author": "idleberg",
@@ -22,7 +22,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "npm run build -- --watch",
-		"lint": "biome check --config-path=biome.jsonc --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
+    "lint": "biome check --config-path=biome.jsonc --no-errors-on-unmatched --vcs-enabled=true --vcs-use-ignore-file=true",
     "prepack": "npm run build",
     "test": "cd tests && vite build"
   },
@@ -47,8 +47,8 @@
     "typescript": "^5.3.3",
     "vite": "^6.3.5"
   },
-	"peerDependencies": {
-		"vite": "^5.0.0 || >=6.0.0"
-	},
-	"packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971"
+  "peerDependencies": {
+    "vite": "^5.0.0 || >=6.0.0"
+  },
+  "packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971"
 }
