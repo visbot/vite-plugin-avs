@@ -1,64 +1,65 @@
-name: CI
+name: "Run tests on NodeJS"
 
 on:
   push:
     paths:
-    - '.github/**'
-    - 'src/**'
-    - 'tests/**'
-    - 'package.json'
-    - 'pnpm-lock.yaml'
+      - ".github/**"
+      - "tests/**"
+      - "index.ts"
+      - "package.json"
+      - "pnpm-lock.yaml"
   pull_request:
     paths:
-    - '.github/**'
-    - 'src/**'
-    - 'tests/**'
-    - 'package.json'
-    - 'pnpm-lock.yaml'
+      - ".github/**"
+      - "tests/**"
+      - "index.ts"
+      - "package.json"
+      - "pnpm-lock.yaml"
   workflow_dispatch:
 
 jobs:
   tests:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        node-version: ['lts/*', '*']
-        os: [ubuntu-latest]
+        node-version: ["18", "20", "22"]
+        vite-version: ["vite@5", "vite@6"]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
 
-      - uses: pnpm/action-setup@v2.0.1
-        name: Install pnpm
-        id: pnpm-install
-        with:
-          version: 8
-          run_install: false
+      - name: Enable Corepack
+        run: |
+          npm install --global corepack@latest
+          corepack enable
 
       - name: Get pnpm store directory
-        id: pnpm-cache
+        shell: bash
         run: |
-          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: actions/cache@v3
+      - uses: actions/cache@v4
         name: Setup pnpm cache
         with:
-          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --strict-peer-dependencies
+        run: |
+          pnpm install --frozen-lockfile --strict-peer-dependencies
+          pnpm install ${{ matrix.vite-version }}
 
       - name: Lint Source
-        run: pnpm run --if-present lint
+        run: pnpm exec biome ci
 
       - name: Build Source
         run: pnpm run --if-present build
