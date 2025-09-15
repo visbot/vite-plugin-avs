@@ -23,8 +23,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: ["18", "20", "22"]
-        vite-version: ["vite@5", "vite@6"]
+        node-version: ["20", "22"]
+        vite-version: ["vite@5", "vite@6", "vite@7"]
 
     steps:
       - uses: actions/checkout@v4
